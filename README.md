@@ -1,0 +1,2 @@
+# medicine_Management_Information_System_winform
+使用winform实现：医药管理信息系统
