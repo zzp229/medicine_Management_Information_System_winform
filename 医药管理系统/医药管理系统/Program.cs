@@ -16,7 +16,15 @@ namespace 医药管理系统
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            
+            LogIn logIn = new LogIn();
+            logIn.ShowDialog();
+            if(logIn.DialogResult == DialogResult.OK )
+            {
+                logIn.Close();
+                Application.Run(new Form1());
+            }
+            
         }
     }
 }

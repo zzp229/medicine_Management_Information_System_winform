@@ -1,0 +1,6 @@
+C:\作业\大三上\数据库应用系统\medicine_Management_Information_System_winform\医药管理系统\Models\bin\Debug\Models.dll
+C:\作业\大三上\数据库应用系统\medicine_Management_Information_System_winform\医药管理系统\Models\bin\Debug\Models.pdb
+C:\作业\大三上\数据库应用系统\medicine_Management_Information_System_winform\医药管理系统\Models\obj\Debug\Models.csproj.AssemblyReference.cache
+C:\作业\大三上\数据库应用系统\medicine_Management_Information_System_winform\医药管理系统\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+C:\作业\大三上\数据库应用系统\medicine_Management_Information_System_winform\医药管理系统\Models\obj\Debug\Models.dll
+C:\作业\大三上\数据库应用系统\medicine_Management_Information_System_winform\医药管理系统\Models\obj\Debug\Models.pdb
