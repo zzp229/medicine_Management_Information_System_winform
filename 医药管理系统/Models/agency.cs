@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    internal class agency
+    public class Agency
     {
         private string ano;
         private string aname;

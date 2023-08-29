@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace 医药管理系统
 {
-    public partial class LogIn : Form
+    public partial class FrmMain : Form
     {
-        public LogIn()
+        public FrmMain()
         {
             InitializeComponent();
-        }
-
-
-
-        //登录按钮
-        private void btn_Login_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.OK;
         }
     }
 }

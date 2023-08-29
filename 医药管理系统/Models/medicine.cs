@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    internal class medicine
+    public class Medicine
     {
         private string mno;
         private string mname;

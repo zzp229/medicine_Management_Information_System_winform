@@ -17,12 +17,12 @@ namespace 医药管理系统
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
-            LogIn logIn = new LogIn();
+            FrmLogin logIn = new FrmLogin();
             logIn.ShowDialog();
             if(logIn.DialogResult == DialogResult.OK )
             {
                 logIn.Close();
-                Application.Run(new Form1());
+                Application.Run(new FrmMain());
             }
             
         }
