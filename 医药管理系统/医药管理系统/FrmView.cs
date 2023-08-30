@@ -7,27 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UI;
+using BLL;
 
-namespace 医药管理系统
+namespace UI
 {
-    public partial class FrmMain : Form
+    public partial class FrmView : Form
     {
-        public FrmMain()
+        public FrmView()
         {
             InitializeComponent();
         }
 
-        private void FrmMain_Load(object sender, EventArgs e)
-        {
-
-        }
 
         //查询按钮
         private void btn_Query_Click(object sender, EventArgs e)
         {
-            FrmView frmView = new FrmView();
-            frmView.ShowDialog();
+            //测试
+            this.dgv.Rows.Clear();
+            this.dgv.Columns.Clear();
+            this.dgv.AutoGenerateColumns = true;
+            DataTable ds = new InfoManager().GetClientInfo();
+            this.dgv.DataSource = ds;
+            this.dgv.Refresh();
         }
     }
 }

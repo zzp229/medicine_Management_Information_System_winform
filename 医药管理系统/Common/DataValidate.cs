@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace 医药管理系统.Public_CS
+namespace Common
 {
     /// <summary>
     /// 验证通用类
