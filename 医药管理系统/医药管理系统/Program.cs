@@ -19,10 +19,10 @@ namespace 医药管理系统
             
             FrmLogin logIn = new FrmLogin();
             logIn.ShowDialog();
-            if(logIn.DialogResult == DialogResult.OK )
+            if(logIn.DialogResult == DialogResult.OK)
             {
                 logIn.Close();
-                Application.Run(new FrmMain());
+                Application.Run(new FrmMain(logIn.Tag));
             }
             
         }

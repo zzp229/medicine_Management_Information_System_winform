@@ -12,6 +12,7 @@ namespace BLL
     {
         public DataTable GetClientInfo()
         {
+            //这里只是测试
             string sql = "select * from client;";
             DataTable dt = SQLHelper.GetDataSet(sql).Tables[0];
             return dt;

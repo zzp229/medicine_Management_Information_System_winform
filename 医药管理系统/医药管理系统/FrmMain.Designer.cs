@@ -35,7 +35,7 @@
             this.cmb_CheckIn = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.lbl_line = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_Title = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -91,6 +91,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "录入";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // lbl_line
             // 
@@ -101,15 +102,15 @@
             this.lbl_line.Size = new System.Drawing.Size(576, 1);
             this.lbl_line.TabIndex = 3;
             // 
-            // label3
+            // lbl_Title
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(216, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(194, 22);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "欢迎***登录医药管理系统";
+            this.lbl_Title.AutoSize = true;
+            this.lbl_Title.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_Title.Location = new System.Drawing.Point(216, 25);
+            this.lbl_Title.Name = "lbl_Title";
+            this.lbl_Title.Size = new System.Drawing.Size(194, 22);
+            this.lbl_Title.TabIndex = 4;
+            this.lbl_Title.Text = "欢迎***登录医药管理系统";
             // 
             // button3
             // 
@@ -125,7 +126,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 505);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbl_Title);
             this.Controls.Add(this.lbl_line);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -136,7 +137,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "主页";
@@ -155,7 +156,7 @@
         private System.Windows.Forms.ComboBox cmb_CheckIn;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lbl_line;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_Title;
         private System.Windows.Forms.Button button3;
     }
 }

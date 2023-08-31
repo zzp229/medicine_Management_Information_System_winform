@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,9 +32,13 @@ namespace BLL
         /// <returns></returns>
         public UserState CheckIdPwd(Admin user)
         {
-            string sql = "select * from users where LoginId = '{0}';";
-            sql = string.Format(sql, user.LoginId);
-            DataSet dataSet = SQLHelper.GetDataSet(sql);
+            //改为params的试试
+            string sql = "select * from users where LoginId = @tmp;";
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@tmp", user.LoginId),
+            };
+            DataSet dataSet = SQLHelper.GetDataSet(sql, parameters);
 
             //先判断是否有这个账号
             if (dataSet.Tables[0].Rows.Count == 0)
@@ -41,7 +46,7 @@ namespace BLL
                 return UserState.NoExist;
             }
 
-            ///好像没有返回空
+            ///好像没有返回空，这个判断比较特殊
 
             //判断密码是否正确
             string pwdFromSql = dataSet.Tables[0].Rows[0]["LoginPwd"].ToString();
@@ -52,6 +57,29 @@ namespace BLL
 
             //全部正确，可以登录
             return UserState.Ok;
+        }
+
+
+
+        /// <summary>
+        /// 获取这个用户的完整信息，包括角色和名称
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public Admin GetAdmin(Admin user)
+        {
+            string sql = "select * from users where LoginId = @tmp;";
+            //sql = string.Format(sql, user.LoginId);
+            //SqlParameter sqlParameter = 
+            SqlParameter[] sqlParameters = new SqlParameter[]
+            {
+                new SqlParameter("@tmp", user.LoginId),
+            };
+            DataSet dataSet = SQLHelper.GetDataSet(sql, sqlParameters);
+
+            user.LoginName = dataSet.Tables[0].Rows[0]["LoginName"].ToString();
+            user.Role = int.Parse(dataSet.Tables[0].Rows[0]["Role"].ToString());
+            return user;
         }
 
 

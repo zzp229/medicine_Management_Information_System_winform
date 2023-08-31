@@ -37,7 +37,73 @@ namespace DAL
             finally { conn.Close(); }   
         }
 
+        //public static DataSet GetDataSet(string sql, SqlParameter[] parameters)
+        //{
+        //    //SqlConnection conn = new SqlConnection(connStr);
+        //    //SqlCommand cmd = conn.CreateCommand();
+        //    //cmd.CommandText = sql;
+        //    //cmd.Parameters.AddRange(parameters);
+
+        //    //SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //    //DataSet ds = new DataSet();
+        //    //try
+        //    //{
+        //    //    conn.Open();
+        //    //    da.Fill(ds);
+        //    //    return ds;
+        //    //}
+        //    //catch (Exception ex)
+        //    //{
+        //    //    throw ex;
+        //    //}
+
+        //    using(SqlConnection conn = new SqlConnection(connStr))
+        //    {
+        //        SqlCommand cmd = new SqlCommand(sql, conn);
+        //        cmd.Parameters.Add(parameters);
+        //        using(SqlDataAdapter da = new SqlDataAdapter(cmd))
+        //        {
+        //            try
+        //            {
+        //                conn.Open();
+        //                DataSet ds = new DataSet();
+        //                da.Fill(ds);
+        //                return ds;
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                throw ex;
+        //            }
+
+        //        }
+        //    }
+        //}
+
        
+        public static DataSet GetDataSet(string sql, SqlParameter[] parameters)
+        {
+            using (SqlConnection conn = new SqlConnection(connStr))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddRange(parameters);
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        DataSet dataSet = new DataSet();
+                        adapter.Fill(dataSet);
+
+                        return dataSet;
+                    }
+                }
+            }
+        }
+        
+
+
+
+
         /// <summary>
         /// SQL的Update命令
         /// </summary>

@@ -29,37 +29,47 @@ namespace 医药管理系统
         //登录按钮
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            //this.DialogResult = DialogResult.OK;
-            //这里的登录逻辑还需要优化一下
-            
             //判断是否为空
-            if(this.txt_LoginId.Text.Trim()=="" || this.txt_LoginPwd.Text.Trim() == "")
+            string LoginId = this.txt_LoginId.Text.Trim();
+            string LoginPwd = this.txt_LoginPwd.Text.Trim();
+
+            if (string.IsNullOrEmpty(LoginId))
             {
-                MessageBox.Show("账号或密码不能为空！");
+                MessageBox.Show("账号不能为空！");
+                txt_LoginId.Focus();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(LoginPwd))
+            {
+                MessageBox.Show("密码不能为空！");
+                txt_LoginPwd.Focus();
+                return;
+            }
+
+            Admin admin = new Admin()  //封装账号和密码
+            {
+                LoginId = this.txt_LoginId.Text.Trim(),
+                LoginPwd = this.txt_LoginPwd.Text.Trim(),
+            };
+
+            //验证账号和密码是否正确
+            LoginManager loginManager = new LoginManager(); //调用Manager类
+            
+            if(loginManager.CheckIdPwd(admin) == UserState.NoExist)
+            {
+                MessageBox.Show("该账号未注册");
+            } 
+            else if(loginManager.CheckIdPwd(admin)==UserState.PwdError)
+            {
+                MessageBox.Show("密码错误！");
             }
             else
             {
-                Admin admin = new Admin()  //封装账号和密码
-                {
-                    LoginId = this.txt_LoginId.Text.Trim(),
-                    LoginPwd = this.txt_LoginPwd.Text.Trim(),
-                };
-
-                //验证账号和密码是否正确
-                LoginManager loginManager = new LoginManager(); //调用Manager类
-                if(loginManager.CheckIdPwd(admin) == UserState.NoExist)
-                {
-                    MessageBox.Show("请验证账号是否填写正确");
-                } 
-                else if(loginManager.CheckIdPwd(admin)==UserState.PwdError)
-                {
-                    MessageBox.Show("密码错误！");
-                }
-                else
-                {
-                    this.DialogResult = DialogResult.OK;
-                }
+                Tag = loginManager.GetAdmin(admin); //将当前用户的信息传出去
+                this.DialogResult = DialogResult.OK;
             }
+           
         }
 
 
