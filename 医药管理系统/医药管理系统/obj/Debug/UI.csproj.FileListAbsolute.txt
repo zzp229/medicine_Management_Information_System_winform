@@ -17,4 +17,7 @@ C:\作业\大三上\数据库应用系统\medicine_Management_Information_System
 C:\作业\大三上\数据库应用系统\medicine_Management_Information_System_winform\医药管理系统\医药管理系统\obj\Debug\UI.csproj.CopyComplete
 C:\作业\大三上\数据库应用系统\medicine_Management_Information_System_winform\医药管理系统\医药管理系统\obj\Debug\医药管理系统.exe
 C:\作业\大三上\数据库应用系统\medicine_Management_Information_System_winform\医药管理系统\医药管理系统\obj\Debug\医药管理系统.pdb
-C:\作业\大三上\数据库应用系统\medicine_Management_Information_System_winform\医药管理系统\医药管理系统\obj\Debug\UI.FrmView.resources
+C:\作业\大三上\数据库应用系统\medicine_Management_Information_System_winform\医药管理系统\医药管理系统\obj\Debug\UI.FrmView_Agency.resources
+C:\作业\大三上\数据库应用系统\medicine_Management_Information_System_winform\医药管理系统\医药管理系统\obj\Debug\UI.FrmView_Medicine.resources
+C:\作业\大三上\数据库应用系统\medicine_Management_Information_System_winform\医药管理系统\医药管理系统\obj\Debug\UI.FrmView_Client.resources
+C:\作业\大三上\数据库应用系统\medicine_Management_Information_System_winform\医药管理系统\医药管理系统\obj\Debug\UI.FrmLogout.resources

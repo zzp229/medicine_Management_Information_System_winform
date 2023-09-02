@@ -46,6 +46,8 @@ namespace BLL
                 return UserState.NoExist;
             }
 
+            ///好像没有返回空，这个判断比较特殊
+
             //判断密码是否正确
             string pwdFromSql = dataSet.Tables[0].Rows[0]["LoginPwd"].ToString();
             if(pwdFromSql != user.LoginPwd)
@@ -88,29 +90,13 @@ namespace BLL
         public int NewRole(Admin user)
         {
             string sql = "insert into users values(@tmp1, @tmp2, @tmp3, @tmp4);";
+            sql = string.Format(sql, user.LoginId, user.LoginName, user.LoginPwd, user.Role);
             SqlParameter[] sqlParameters = new SqlParameter[]
             {
                 new SqlParameter("@tmp1", user.LoginId),
                 new SqlParameter("@tmp2", user.LoginName),
                 new SqlParameter("@tmp3", user.LoginPwd),
                 new SqlParameter("@tmp4", user.Role)
-            };
-            return SQLHelper.Update(sql, sqlParameters);
-        }
-
-
-
-        /// <summary>
-        /// 在数据库中删除这个账号
-        /// </summary>
-        /// <param name="user"></param>
-        /// <returns></returns>
-        public int DeleteAcount(Admin user)
-        {
-            string sql = "delete from users where LoginId = @id";
-            SqlParameter[] sqlParameters = new SqlParameter[]
-            {
-                new SqlParameter("@id", user.LoginId),
             };
             return SQLHelper.Update(sql, sqlParameters);
         }

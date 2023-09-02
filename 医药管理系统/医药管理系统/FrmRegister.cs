@@ -36,6 +36,7 @@ namespace 医药管理系统
             if(count > 0) 
             {
                 MessageBox.Show("注册成功！");
+                this.Close();
             }
             else
             {

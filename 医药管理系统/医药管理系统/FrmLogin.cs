@@ -67,7 +67,13 @@ namespace 医药管理系统
             else
             {
                 Tag = loginManager.GetAdmin(admin); //将当前用户的信息传出去
-                this.DialogResult = DialogResult.OK;
+                FrmMain frmMain = new FrmMain(Tag);
+                frmMain.Show();
+                
+                //初始化窗口
+                this.txt_LoginId.Text = null;
+                this.txt_LoginPwd.Text = null;
+
             }
            
         }

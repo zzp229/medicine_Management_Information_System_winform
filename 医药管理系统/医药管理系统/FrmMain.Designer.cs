@@ -36,7 +36,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.lbl_line = new System.Windows.Forms.Label();
             this.lbl_Title = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_Logout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -51,6 +51,10 @@
             // cmb_Inquire
             // 
             this.cmb_Inquire.FormattingEnabled = true;
+            this.cmb_Inquire.Items.AddRange(new object[] {
+            "顾客信息",
+            "经办人信息",
+            "药品信息"});
             this.cmb_Inquire.Location = new System.Drawing.Point(113, 115);
             this.cmb_Inquire.Name = "cmb_Inquire";
             this.cmb_Inquire.Size = new System.Drawing.Size(121, 25);
@@ -58,10 +62,10 @@
             // 
             // btn_Query
             // 
-            this.btn_Query.Location = new System.Drawing.Point(113, 156);
+            this.btn_Query.Location = new System.Drawing.Point(113, 146);
             this.btn_Query.Name = "btn_Query";
             this.btn_Query.Size = new System.Drawing.Size(75, 34);
-            this.btn_Query.TabIndex = 2;
+            this.btn_Query.TabIndex = 0;
             this.btn_Query.Text = "查询";
             this.btn_Query.UseVisualStyleBackColor = true;
             this.btn_Query.Click += new System.EventHandler(this.btn_Query_Click);
@@ -112,14 +116,15 @@
             this.lbl_Title.TabIndex = 4;
             this.lbl_Title.Text = "欢迎***登录医药管理系统";
             // 
-            // button3
+            // btn_Logout
             // 
-            this.button3.Location = new System.Drawing.Point(617, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(44, 34);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "注销";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_Logout.Location = new System.Drawing.Point(585, 12);
+            this.btn_Logout.Name = "btn_Logout";
+            this.btn_Logout.Size = new System.Drawing.Size(76, 34);
+            this.btn_Logout.TabIndex = 2;
+            this.btn_Logout.Text = "注销该账号";
+            this.btn_Logout.UseVisualStyleBackColor = true;
+            this.btn_Logout.Click += new System.EventHandler(this.btn_Logout_Click);
             // 
             // FrmMain
             // 
@@ -128,7 +133,7 @@
             this.ClientSize = new System.Drawing.Size(673, 505);
             this.Controls.Add(this.lbl_Title);
             this.Controls.Add(this.lbl_line);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btn_Logout);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btn_Query);
             this.Controls.Add(this.cmb_CheckIn);
@@ -141,6 +146,7 @@
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "主页";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -157,7 +163,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lbl_line;
         private System.Windows.Forms.Label lbl_Title;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_Logout;
     }
 }
 

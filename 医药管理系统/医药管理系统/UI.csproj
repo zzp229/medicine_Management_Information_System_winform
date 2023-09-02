@@ -49,6 +49,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\DataGridViewStyle.cs" />
+    <Compile Include="FrmLogout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogout.Designer.cs">
+      <DependentUpon>FrmLogout.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,14 +74,29 @@
     <Compile Include="FrmRegister.Designer.cs">
       <DependentUpon>FrmRegister.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmView.cs">
+    <Compile Include="FrmView_Agency.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmView.Designer.cs">
-      <DependentUpon>FrmView.cs</DependentUpon>
+    <Compile Include="FrmView_Agency.Designer.cs">
+      <DependentUpon>FrmView_Agency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmView_Medicine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmView_Medicine.Designer.cs">
+      <DependentUpon>FrmView_Medicine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmView_Client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmView_Client.Designer.cs">
+      <DependentUpon>FrmView_Client.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmLogout.resx">
+      <DependentUpon>FrmLogout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,8 +106,14 @@
     <EmbeddedResource Include="FrmRegister.resx">
       <DependentUpon>FrmRegister.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmView.resx">
-      <DependentUpon>FrmView.cs</DependentUpon>
+    <EmbeddedResource Include="FrmView_Agency.resx">
+      <DependentUpon>FrmView_Agency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmView_Medicine.resx">
+      <DependentUpon>FrmView_Medicine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmView_Client.resx">
+      <DependentUpon>FrmView_Client.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
